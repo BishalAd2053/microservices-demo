@@ -35,7 +35,7 @@
 		<spring-boot.version>3.3.8</spring-boot.version>
 		<maven-compiler-plugin>3.13.0</maven-compiler-plugin>
 		<twitter4j-stream>4.0.7</twitter4j-stream>
-		<lombok-version>1.18.16</lombok-version>
+		<lombok-version>1.18.30</lombok-version>
 
 	</properties>
 	<dependencyManagement>
@@ -49,6 +49,12 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-test</artifactId>
 				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>org.junit.vintage</groupId>
+						<artifactId>junit-vintage-engine</artifactId>
+					</exclusion>
+				</exclusions>
 				<version>${spring-boot.version}</version>
 			</dependency>
 			<dependency>
